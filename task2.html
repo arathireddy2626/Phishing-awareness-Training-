@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Awareness Training</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Phishing Awareness Training</h1>
+    
+    <div class="section" id="introduction">
+        <h2>Introduction</h2>
+        <p>Phishing is a type of cyber attack where attackers attempt to deceive individuals into providing sensitive information...</p>
+    </div>
+    
+    <div class="section" id="types">
+        <h2>Types of Phishing Attacks</h2>
+        <p>1. Email Phishing: Attackers use fake emails to trick recipients...</p>
+        <p>2. Spear Phishing: Targeted phishing attacks aimed at specific individuals...</p>
+        <p>3. Whaling: Attacks targeting high-profile individuals...</p>
+        <p>4. Smishing: Phishing attacks via SMS/text messages...</p>
+        <p>5. Vishing: Phishing attacks conducted over the phone...</p>
+    </div>
+    
+    <div class="section" id="recognizing">
+        <h2>Recognizing Phishing Emails</h2>
+        <p>Common signs of phishing emails include unusual sender addresses, generic greetings, urgent or threatening language, and suspicious links or attachments...</p>
+    </div>
+    
+    <div class="section" id="avoiding">
+        <h2>Avoiding Phishing Attacks</h2>
+        <p>Best practices include verifying the sender's email address, hovering over links to check their true destination, being cautious of unexpected attachments, and using two-factor authentication...</p>
+    </div>
+    
+    <div class="section" id="quiz">
+        <h2>Interactive Quiz</h2>
+        <div class="quiz-question">
+            <p>Question 1: What is phishing?</p>
+            <input type="radio" name="q1" value="correct"> A type of cyber attack<br>
+            <input type="radio" name="q1" value="incorrect"> A type of fishing<br>
+        </div>
+        <div class="quiz-question">
+            <p>Question 2: Which of the following is a sign of a phishing email?</p>
+            <input type="radio" name="q2" value="correct"> Suspicious links<br>
+            <input type="radio" name="q2" value="incorrect"> Correct grammar<br>
+        </div>
+        <button onclick="checkQuiz()">Submit</button>
+        <p id="quiz-result"></p>
+    </div>
+    
+    <script>
+        function checkQuiz() {
+            var correctAnswers = 0;
+            
+            if (document.querySelector('input[name="q1"]:checked').value === 'correct') {
+                correctAnswers++;
+            }
+            
+            if (document.querySelector('input[name="q2"]:checked').value === 'correct') {
+                correctAnswers++;
+            }
+            
+            var resultText = `You got ${correctAnswers} out of 2 questions correct.`;
+            document.getElementById('quiz-result').innerText = resultText;
+        }
+    </script>
+</body>
+</html>
